@@ -1,0 +1,8 @@
+# Do not publish private credentials or local copies with keys
+.env
+.env.*
+!.env.example
+*.private.html
+*.local.html
+node_modules/
+.DS_Store
