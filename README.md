@@ -1,35 +1,41 @@
-# LIFEQUEST AI V11.4 — Random Distinct Houses
+# LIFEQUEST AI V11.6 — Clean UI & Beautiful Minimap
 
-Game học tiếng Anh, kỹ năng sống với thế giới 2D, NPC, nhiệm vụ, tương tác và chế độ AI tùy cấu hình.
+Bản cập nhật V11.6 của LIFEQUEST AI, đóng gói để triển khai bằng GitHub Pages trên repository hiện có:
 
-## Chạy trên GitHub Pages
+- Repo: https://github.com/lehuythevinh-byte/lifequest-ai-
+- Website khi đã bật Pages: https://lehuythevinh-byte.github.io/lifequest-ai-/
 
-1. Đăng nhập GitHub và tạo repository mới (repository của bạn `lehuythevinh-byte/lifequest-ai-`).
-2. Tải nội dung trong ZIP này lên **thư mục gốc** của repository: `index.html`, `README.md`, `.nojekyll` và `.gitignore`. **Đừng tải cả ZIP lên** nếu muốn chạy GitHub Pages.
-3. Tại repository, mở **Settings > Pages**.
-4. Ở **Build and deployment > Source**, chọn **Deploy from a branch**.
-5. Chọn branch `main`, folder `/ (root)` và **Save**.
-6. Khi GitHub Pages triển khai xong, website có dạng `https://lehuythevinh-byte.github.io/lifequest-ai-/`.
+## Mã nguồn
 
-## Lưu ý bảo mật Gemini
+- `index.html`: toàn bộ HTML, CSS và JavaScript của phiên bản V11.6; đổi tên từ file HTML bạn cung cấp, không thay đổi nội dung.
+- `.gitignore`: tránh đưa nhầm file cấu hình riêng và bản chứa khóa bí mật lên GitHub.
+- `.nojekyll`: không bật xử lý Jekyll mặc định cho GitHub Pages.
 
-- File `index.html` trong gói này đã bỏ Gemini API key được nhúng sẵn.
-- Nếu key cũ từng được chia sẻ hay xuất hiện trong HTML, hãy **thu hồi / đổi key trên Google AI Studio hoặc Google Cloud**. Không đưa key thật vào GitHub, kể cả repository riêng tư nếu bạn có thể tránh được.
-- GitHub Pages chỉ lưu website tĩnh, không chạy được endpoint `/api/gemini` phía máy chủ. Các chức năng offline vẫn có thể hoạt động; để dùng Gemini AI an toàn trên web công khai, triển khai backend/serverless proxy có bảo vệ riêng.
-- Phaser được tải từ CDN nên trò chơi cần Internet.
+## Cập nhật qua Git Bash (không cần `git init` lại)
 
-## Điều khiển
+1. Giải nén ZIP.
+2. Sao chép `index.html` và `README.md` vào thư mục repo Git đã dùng để push V11.4 (ghi đè các file cũ).
+3. Mở Git Bash trong thư mục repo, chạy:
 
-Dùng WASD hoặc phím mũi tên để di chuyển, **E** để tương tác, **G** để mở menu, **K** để mở cấu hình AI.
+```bash
+git status
+git add index.html README.md
+git commit -m "Update LIFEQUEST AI to V11.6"
+git push origin main
+```
 
-## Nguồn
+Nếu Git báo "nothing to commit", hãy kiểm tra bạn đã thay `index.html` đúng thư mục có `.git` chưa.
 
-Đóng gói từ `LIFEQUEST_AI_V11_4_RANDOM_DISTINCT_HOUSES.html`. Phần mã của trò chơi được giữ nguyên, ngoại trừ việc xóa API key nhúng khỏi cấu hình.
+## GitHub Pages
 
-## Repository chính xác
+Tại Settings > Pages, chọn Deploy from a branch; branch `main`, folder `/ (root)`.
+Nếu Pages đã bật từ V11.4, bản cập nhật `main` sẽ kích hoạt triển khai lại.
 
-- GitHub: https://github.com/lehuythevinh-byte/lifequest-ai-
-- Trang GitHub Pages (khi đã bật): https://lehuythevinh-byte.github.io/lifequest-ai-/
-- Cấu hình Pages: https://github.com/lehuythevinh-byte/lifequest-ai-/settings/pages
+## Bảo mật & AI
 
-> Lưu ý: Dấu gạch nối `-` cuối `lifequest-ai-` là một phần tên repository.
+- Trong bản nguồn này, cấu hình `GEMINI_API_KEY` rỗng; không nhúng khóa Gemini vào HTML công khai.
+- GitHub Pages chỉ phục vụ nội dung tĩnh. Để dùng Gemini an toàn, cần endpoint server-side / serverless riêng, hoặc thiết lập phía người dùng với hiểu rõ rủi ro lộ key.
+- Phaser tải qua Internet/CDN; mở trang cần kết nối mạng.
+- Nếu API key đã từng xuất hiện trong repo/public HTML, hãy thu hồi và đổi key.
+
+Nguồn: `LIFEQUEST_AI_V11_6_CLEAN_UI_BEAUTIFUL_MINIMAP(1).html`.
